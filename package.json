@@ -2,7 +2,7 @@
   "name": "railway-ssr",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
+  "type": "commonjs",
   "homepage": "https://hirotaka-0926.github.io/railway-ssr/",
   "scripts": {
     "dev": "vite",
@@ -10,27 +10,53 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "server": "tsx server/index.ts",
+    "server_build": "webpack"
   },
   "dependencies": {
+    "browserify-zlib": "^0.2.0",
+    "buffer": "^6.0.3",
+    "crypto-browserify": "^3.12.1",
     "express": "^4.21.2",
+    "path-browserify": "^1.0.1",
+    "querystring-es3": "^0.2.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "tailwindcss": "^4.0.0"
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.2.0",
+    "tailwindcss": "^4.0.0",
+    "url": "^0.11.4",
+    "util": "^0.12.5"
   },
   "devDependencies": {
+    "@babel/core": "^7.26.7",
+    "@babel/preset-env": "^7.26.7",
+    "@babel/preset-react": "^7.26.3",
+    "@babel/preset-typescript": "^7.26.0",
     "@eslint/js": "^9.17.0",
     "@types/express": "^5.0.0",
+    "@types/node": "^22.10.10",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "@vitejs/plugin-react-swc": "^3.5.0",
+    "babel-loader": "^9.2.1",
     "eslint": "^9.17.0",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.16",
     "gh-pages": "^6.3.0",
     "globals": "^15.14.0",
-    "typescript": "~5.6.2",
+    "html-webpack-plugin": "^5.6.3",
+    "ts-loader": "^9.5.2",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3",
     "typescript-eslint": "^8.18.2",
-    "vite": "^6.0.5"
-  }
+    "vite": "^6.0.5",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1"
+  },
+  "transpilePackages": [
+    "ui"
+  ]
 }
